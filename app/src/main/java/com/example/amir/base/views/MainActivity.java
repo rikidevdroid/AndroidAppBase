@@ -1,7 +1,9 @@
-package com.example.amir.base;
+package com.example.amir.base.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.amir.base.R;
 
 public class MainActivity extends AppCompatActivity {
 
