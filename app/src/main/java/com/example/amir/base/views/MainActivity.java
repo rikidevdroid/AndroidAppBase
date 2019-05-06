@@ -68,14 +68,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
 
-    /** Method to populate the data arrays */
 
     public void populateArrays(){
 
-        /** In a practical application the arrays phoneNum and buttonLabels could be
-         * updated dynamically from the Web in this method.  For this project we just
-         * hard-wire in some values to illustrate how to use such data, once obtained,
-         * to make phone calls. The names and numbers are made up.*/
 
         phoneNum[0] = "999-000-0001";
         phoneNum[1] = "999-000-0002";
@@ -91,8 +86,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         buttonLabels[4] = "Mona Liza";
         buttonLabels[5] = "Issac Nuton";
     }
-
-    /** Process button events */
 
     @Override
     public void onClick(View v) {
