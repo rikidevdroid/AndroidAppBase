@@ -36,14 +36,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
-
-        mainActivityViewModel.getDoctors().observe(this, new Observer<List<Doctors>>() {
-            @Override
-            public void onChanged(@Nullable List<Doctors> doctors) {
-                //notify adapters
-            }
-        });
+//        mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
+//        mainActivityViewModel.init();
+//        mainActivityViewModel.getDoctors().observe(this, new Observer<List<Doctors>>() {
+//            @Override
+//            public void onChanged(@Nullable List<Doctors> doctors) {
+//                //notify adapters
+//            }
+//        });
 
         phoneNum = new String[entries];
         buttonLabels = new String[entries];
