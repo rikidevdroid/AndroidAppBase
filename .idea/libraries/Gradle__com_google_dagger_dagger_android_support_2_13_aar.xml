@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.dagger:dagger-android-support:2.13@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/dagger-android-support-2.13.aar/5d421e9b2cefd1432fb8ff363b75847e/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/dagger-android-support-2.13.aar/5d421e9b2cefd1432fb8ff363b75847e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/23b09db47539a08ef3d5134a4284f203/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/23b09db47539a08ef3d5134a4284f203/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.amir.base.MVVM.models.StarWars;
+import com.example.amir.base.MVVM.models.Doctors;
 import com.example.amir.base.R;
 
 import java.util.ArrayList;
@@ -15,8 +15,11 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private List<StarWars.People> data;
+    private List<Doctors.Doctor> data;
     private RecyclerViewAdapter.ClickListener clickListener;
 
     @Inject
@@ -32,42 +35,57 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.txtName.setText(data.get(position).name);
-        holder.txtBirthYear.setText(data.get(position).birthYear);
+        holder.txtName.setText(data.get(position).firstName);
+        holder.txtBirthYear.setText(data.get(position).lastName);
     }
 
     @Override
     public int getItemCount() {
+        System.out.println(data.size()+"AAAAAAAAAAAAAAAAAAAAAAAAAAA");
         return data.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtName;
-        private TextView txtBirthYear;
-        private ConstraintLayout constraintLayoutContainer;
+        @BindView(R.id.txtName)
+        public TextView txtName;
+
+        @BindView(R.id.txtBirthYear)
+        public TextView txtBirthYear;
+
+        @BindView(R.id.constraintLayout)
+        public ConstraintLayout constraintLayoutContainer;
 
         ViewHolder(View itemView) {
             super(itemView);
 
-            txtName = itemView.findViewById(R.id.txtName);
-            txtBirthYear = itemView.findViewById(R.id.txtBirthYear);
-            constraintLayoutContainer = itemView.findViewById(R.id.constraintLayout);
+//            txtName = itemView.findViewById(R.id.txtName);
+//            txtBirthYear = itemView.findViewById(R.id.txtBirthYear);
+//            constraintLayoutContainer = itemView.findViewById(R.id.constraintLayout);
 
-            constraintLayoutContainer.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    clickListener.launchIntent(data.get(getAdapterPosition()).films.get(0));
-                }
-            });
-        }
+            ButterKnife.bind(this,itemView);
+
+
+
+//            constraintLayoutContainer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                clickListener.launchIntent(data.get(getAdapterPosition()).films.get(0));
+//            }
+//        });
+    }
+
+//        @OnClick(R.id.constraintLayout)
+//        public void onClick(View v) {
+//            clickListener.launchIntent(data.get(getAdapterPosition()).films.get(0));
+//        }
     }
 
     public interface ClickListener {
         void launchIntent(String filmName);
     }
 
-    public void setData(List<StarWars.People> data) {
+    public void setData(List<Doctors.Doctor> data) {
         this.data.addAll(data);
         notifyDataSetChanged();
     }

@@ -17,6 +17,7 @@ import com.example.amir.base.retrofit.APIInterface;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,6 +33,7 @@ public class DetailActivity extends AppCompatActivity {
     @ApplicationContext
     public Context mContext;
 
+    @BindView(R.id.textView)
     TextView textView;
 
     @Override
@@ -39,7 +41,9 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        textView = findViewById(R.id.textView);
+        ButterKnife.bind(this);
+
+        //textView = findViewById(R.id.textView);
 
         String url = getIntent().getStringExtra("url");
 
