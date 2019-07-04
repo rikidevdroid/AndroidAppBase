@@ -1,7 +1,13 @@
 <resources>
-    <string name="app_name">Base</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="hello">SimpleDialer</string>
-    <string name="main_label">My Friends</string>
+    <string name="app_name">SkypeSDK</string>
+    <string name="join_us_on">join us on</string>
+    <string name="powered_by_resaa">Powered By Resaa</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in_btn">ورود</string>
+    <string name="meetingURI">https://meet.bsn.local/ivrtest/3HRTV8K2</string>
+    <string name="userDisplayName">Hassan</string>
+    <string name="userNameHint">نام کاربری &#8230;</string>
+    <string name="passwordHint">&#8230; رمز عبور</string>
+    <string name="forgotPassword">رمز عبور را فراموش کرده ام ؟</string>
 </resources>
