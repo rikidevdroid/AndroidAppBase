@@ -2,10 +2,14 @@ package com.example.amir.base.retrofit;
 
 import com.example.amir.base.MVVM.models.Doctors;
 import com.example.amir.base.MVVM.models.Film;
+import com.example.amir.base.MVVM.models.Oauth2;
 import com.example.amir.base.MVVM.models.StarWars;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.Url;
@@ -23,5 +27,13 @@ public interface APIInterface {
 
     @GET
     Call<Film> getFilmData(@Url String url, @Query("format") String format);
+
+    @FormUrlEncoded
+    @POST("oauth2/token")
+    Call<Oauth2> login(
+            @Field("username") String userName,
+            @Field("password") String password,
+            @Field("grant_type") String grantType
+    );
 
 }

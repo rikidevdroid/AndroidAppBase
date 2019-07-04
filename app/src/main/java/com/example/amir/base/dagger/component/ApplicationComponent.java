@@ -9,7 +9,10 @@ import com.example.amir.base.dagger.qualifier.ApplicationContext;
 import com.example.amir.base.dagger.scopes.ApplicationScope;
 import com.example.amir.base.retrofit.APIInterface;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
+
 
 @ApplicationScope
 @Component(modules = {ContextModule.class, RetrofitModule.class})

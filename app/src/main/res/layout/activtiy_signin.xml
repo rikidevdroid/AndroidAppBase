@@ -61,6 +61,7 @@
         
         
         <EditText
+            android:id="@+id/id_userName"
             android:textColor="@color/white"
             android:theme="@style/MyEditTextTheme"
             android:inputType="phone"
@@ -78,6 +79,7 @@
 
 
         <EditText
+            android:id="@+id/id_password"
             android:theme="@style/MyEditTextTheme"
             android:textColor="@color/white"
             android:textColorLink="@color/white"
@@ -109,6 +111,7 @@
 
 
         <Button
+            android:id="@+id/id_loginButton"
             android:soundEffectsEnabled="true"
             android:paddingLeft="60dp"
             android:gravity="center"

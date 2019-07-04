@@ -3,6 +3,7 @@ package com.example.amir.base;
 import android.app.Activity;
 import android.app.Application;
 
+
 import com.example.amir.base.dagger.component.ApplicationComponent;
 import com.example.amir.base.dagger.component.DaggerApplicationComponent;
 import com.example.amir.base.dagger.module.ContextModule;
