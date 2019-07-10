@@ -10,12 +10,8 @@ import com.example.amir.base.dagger.scopes.ActivityScope;
 import dagger.Component;
 
 @ActivityScope
-@Component(modules = AdapterModule.class, dependencies = ApplicationComponent.class)
+@Component( dependencies = ApplicationComponent.class)
 public interface MainActivityComponent {
-
-    @ActivityContext
-    Context getContext();
-
 
     void injectMainActivity(MainActivity mainActivity);
 }

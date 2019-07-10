@@ -1,5 +1,7 @@
 package com.example.amir.base.MVVM.models;
 
+
+
 import com.google.gson.annotations.SerializedName;
 
 public class Oauth2 {
@@ -12,6 +14,7 @@ public class Oauth2 {
 
     @SerializedName("expires_in")
     public Integer expiresIn;
+
 
 
     public Oauth2(String accessToken, String tokenType, Integer expiresIn) {

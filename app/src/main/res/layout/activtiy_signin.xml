@@ -61,6 +61,7 @@
         
         
         <EditText
+            android:text="57662"
             android:id="@+id/id_userName"
             android:textColor="@color/white"
             android:theme="@style/MyEditTextTheme"
@@ -79,6 +80,7 @@
 
 
         <EditText
+            android:text="0895"
             android:id="@+id/id_password"
             android:theme="@style/MyEditTextTheme"
             android:textColor="@color/white"

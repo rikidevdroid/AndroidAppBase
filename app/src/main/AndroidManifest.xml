@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MVVM.views.DetailActivity"/>
+        <activity android:name=".MVVM.views.DoctorsList"/>
 
         <activity android:name=".MVVM.views.SigninActivity">
 

@@ -3,12 +3,16 @@ package com.example.amir.base.retrofit;
 import com.example.amir.base.MVVM.models.Doctors;
 import com.example.amir.base.MVVM.models.Film;
 import com.example.amir.base.MVVM.models.Oauth2;
+import com.example.amir.base.MVVM.models.ProfileRes;
 import com.example.amir.base.MVVM.models.StarWars;
+
+import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -35,5 +39,9 @@ public interface APIInterface {
             @Field("password") String password,
             @Field("grant_type") String grantType
     );
+
+
+    @GET("Accounts/{id}/Profile")
+    Call<ProfileRes> getProfile (@Path("id") String id , @Header("Authorization") String token);
 
 }

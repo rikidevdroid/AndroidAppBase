@@ -1,6 +1,7 @@
 package com.example.amir.base.MVVM.views;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import com.example.amir.base.MVVM.models.Oauth2;
 import com.example.amir.base.MyApplication;
 import com.example.amir.base.R;
 import com.example.amir.base.dagger.component.ApplicationComponent;
-import com.example.amir.base.dagger.component.DaggerDetailActivityComponent;
+
 import com.example.amir.base.dagger.component.DaggerSigninActivityComponent;
 import com.example.amir.base.dagger.component.SigninActivityComponent;
 import com.example.amir.base.retrofit.APIInterface;
@@ -84,9 +85,18 @@ public class SigninActivity extends Activity {
 
                             accessToken = response.body().accessToken;
                             jwt = new JWT(accessToken);
-                            claim = jwt.getClaim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name");
+                            claim = jwt.getClaim(getString(R.string.jwt_id_key));
                             id = claim.asString();
-                            Toast.makeText(getBaseContext(), id, Toast.LENGTH_LONG).show();
+
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent.putExtra("userId" , id);
+                            intent.putExtra("token" , accessToken);
+
+                            startActivity(intent);
+                            finish();
+
+
+                            //Toast.makeText(getBaseContext(), id, Toast.LENGTH_LONG).show();
                         }
                     }
 
