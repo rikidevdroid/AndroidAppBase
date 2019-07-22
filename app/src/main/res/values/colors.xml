@@ -2,8 +2,12 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#47D5AB</color>
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FFCF62</color>
     <color name="fadedWhite">#80FFFFFF</color>
+    <color name="lightWhite">#B3FFFFFF</color>
+    <color name="smsCode">#455368</color>
+    <color name="wrongSmsCode">#FC3C7D</color>
+    <color name="smsCodeStatus">#A6FFFFFF</color>
 </resources>

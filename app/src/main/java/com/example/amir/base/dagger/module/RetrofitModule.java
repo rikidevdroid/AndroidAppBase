@@ -3,6 +3,8 @@ package com.example.amir.base.dagger.module;
 import com.example.amir.base.dagger.scopes.ApplicationScope;
 import com.example.amir.base.retrofit.APIInterface;
 
+import java.util.concurrent.TimeUnit;
+
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
@@ -34,7 +36,7 @@ public class RetrofitModule {
     @Provides
     @ApplicationScope
     OkHttpClient getOkHttpCleint(HttpLoggingInterceptor httpLoggingInterceptor) {
-        return new OkHttpClient.Builder()
+        return new OkHttpClient.Builder().connectTimeout(30, TimeUnit.SECONDS).readTimeout(30, TimeUnit.SECONDS).writeTimeout(30, TimeUnit.SECONDS)
                 .addInterceptor(httpLoggingInterceptor)
                 .build();
     }

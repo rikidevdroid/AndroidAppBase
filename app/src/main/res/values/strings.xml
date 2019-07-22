@@ -5,6 +5,7 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in_btn">ورود</string>
+    <string name="get_sms_btn">دریافت کد</string>
     <string name="meetingURI">https://meet.bsn.local/ivrtest/3HRTV8K2</string>
     <string name="userDisplayName">Hassan</string>
     <string name="userNameHint">نام کاربری &#8230;</string>
@@ -12,4 +13,10 @@
     <string name="forgotPassword">رمز عبور را فراموش کرده ام ؟</string>
     <string name="grant_type">password</string>
     <string name="jwt_id_key">http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name</string>
+    <string name="enter_phone_number">لطفا شماره همراه خود را وارد نمایید</string>
+    <string name="userPhoneNumberHint">9120000000</string>
+    <string name="enter_sms_code">لطفا کد دریافت شده را وارد نمایید</string>
+    <string name="check_code">بررسی کد</string>
+    <string name="resend_code">ارسال مجدد کد شناسایی</string>
+    <string name="wrong_code_entered">کد وارد شده صحیح نمی باشد</string>
 </resources>

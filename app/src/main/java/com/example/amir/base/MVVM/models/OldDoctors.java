@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-public class Doctors {
+public class OldDoctors {
 
     @SerializedName("doctors") @Expose public List<Doctor> result ;
 

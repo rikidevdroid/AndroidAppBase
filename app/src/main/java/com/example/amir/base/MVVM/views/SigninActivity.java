@@ -2,8 +2,11 @@ package com.example.amir.base.MVVM.views;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +22,7 @@ import com.example.amir.base.dagger.component.ApplicationComponent;
 
 import com.example.amir.base.dagger.component.DaggerSigninActivityComponent;
 import com.example.amir.base.dagger.component.SigninActivityComponent;
+import com.example.amir.base.fragments.SignInFragment;
 import com.example.amir.base.retrofit.APIInterface;
 
 import javax.inject.Inject;
@@ -29,21 +33,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SigninActivity extends Activity {
+public class SigninActivity extends FragmentActivity {
 
     SigninActivityComponent signinActivityComponent;
 
     @Inject
     public APIInterface apiInterface;
 
-    @BindView(R.id.id_userName)
-    EditText userNameEditText;
-
-    @BindView(R.id.id_password)
-    EditText passwordEditText;
-
-    @BindView(R.id.id_loginButton)
-    Button loginButton;
+//    @BindView(R.id.id_userName)
+//    EditText userNameEditText;
+//
+//    @BindView(R.id.id_password)
+//    EditText passwordEditText;
+//
+//    @BindView(R.id.id_loginButton)
+//    Button loginButton;
 
 
     private String userName;
@@ -55,8 +59,16 @@ public class SigninActivity extends Activity {
     private String accessToken;
     private String id;
 
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+    }
+
     private JWT jwt;
     private Claim claim;
+
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,42 +83,33 @@ public class SigninActivity extends Activity {
 
         signinActivityComponent.inject(this);
 
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        // Check that the activity is using the layout version with
+        // the fragment_container FrameLayout
+        if (findViewById(R.id.fragment_container) != null) {
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userName = userNameEditText.getText().toString();
-                password = passwordEditText.getText().toString();
-                apiInterface.login(userName,password,getString(R.string.grant_type)).enqueue(new Callback<Oauth2>() {
-                    @Override
-                    public void onResponse(Call<Oauth2> call, Response<Oauth2> response) {
-                        if(response.isSuccessful()) {
-
-                            accessToken = response.body().accessToken;
-                            jwt = new JWT(accessToken);
-                            claim = jwt.getClaim(getString(R.string.jwt_id_key));
-                            id = claim.asString();
-
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            intent.putExtra("userId" , id);
-                            intent.putExtra("token" , accessToken);
-
-                            startActivity(intent);
-                            finish();
-
-
-                            //Toast.makeText(getBaseContext(), id, Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Oauth2> call, Throwable t) {
-
-                    }
-                });
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            if (savedInstanceState != null) {
+                return;
             }
-        });
 
+            // Create a new Fragment to be placed in the activity layout
+            SignInFragment firstFragment = new SignInFragment();
+
+            // In case this activity was started with special instructions from an
+            // Intent, pass the Intent's extras to the fragment as arguments
+            firstFragment.setArguments(getIntent().getExtras());
+
+            // Add the fragment to the 'fragment_container' FrameLayout
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container, firstFragment).commit();
+        }
     }
+
+
+
 }

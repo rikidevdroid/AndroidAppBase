@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardBackgroundColor="#fff"
+    card_view:cardCornerRadius="5dp"
+
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/id_doctor_image"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="5dp"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_person_black_24dp"/>
+    
+    <TextView
+        android:id="@+id/id_doctor_name"
+        android:textSize="15sp"
+        android:textColor="#03A9F4"
+        android:gravity="right|center"
+        android:text="دکتر کامران نبوی"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="130dp"
+        android:layout_height="25dp" />
+
+
+    <TextView
+
+
+        android:id="@+id/id_doctor_specialty"
+        android:textSize="12sp"
+        android:textColor="#B8B6B6"
+        android:gravity="right|center"
+        android:text="متخصص قلب و عروق"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="110dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp" />
+
+    <View
+        android:id="@+id/id_separator"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="125dp"
+        android:background="#B6B4B4"
+        android:layout_toStartOf="@id/id_doctor_image"
+        android:layout_width="1dp"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/id_resaa"
+        android:layout_marginEnd="10dp"
+        android:textSize="12sp"
+        android:layout_marginTop="40dp"
+        android:layout_toStartOf="@id/id_separator"
+        android:textColor="#4E4E4E"
+        android:text="کد رِسا :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="#673AB7"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@id/id_separator"
+        android:id="@+id/id_resaa_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_resaa"
+        android:layout_marginTop="5dp"
+        android:text="6570" />
+
+
+    <ImageView
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="45dp"
+        android:layout_toEndOf="@id/id_doctor_detail"
+        android:id="@+id/id_call_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_call_green_24dp"/>
+
+    <ImageView
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/id_doctor_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_visibility_blue_24dp"/>
+
+
+</RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

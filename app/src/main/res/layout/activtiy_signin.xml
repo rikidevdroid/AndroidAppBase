@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_container"
     android:background="@drawable/signin_background"
     android:layout_gravity="center">
 
@@ -26,6 +27,7 @@
         android:layout_height="match_parent">
         
         <TextView
+            android:id="@+id/id_signin_page"
             android:fontFamily="@font/ubuntu_m"
             android:gravity="center"
             android:textSize="16sp"
@@ -47,6 +49,7 @@
 
 
         <TextView
+
             android:fontFamily="@font/ubuntu_l"
             android:layout_marginEnd="112dp"
             android:layout_alignParentEnd="true"
@@ -58,149 +61,19 @@
             android:text="@string/sign_up"
             android:layout_width="wrap_content"
             android:layout_height="21dp" />
-        
-        
-        <EditText
-            android:text="57662"
-            android:id="@+id/id_userName"
-            android:textColor="@color/white"
-            android:theme="@style/MyEditTextTheme"
-            android:inputType="phone"
-            android:drawablePadding="10dp"
-            android:hint="@string/userNameHint"
-            android:textSize="16sp"
-            android:textColorHint="@color/white"
-            android:layout_marginTop="257dp"
-            android:gravity="right"
-            android:drawableRight="@drawable/ic_user_icon"
-            android:layout_width="211dp"
-            android:layout_height="40dp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentTop="true"/>
 
-
-        <EditText
-            android:text="0895"
-            android:id="@+id/id_password"
-            android:theme="@style/MyEditTextTheme"
-            android:textColor="@color/white"
-            android:textColorLink="@color/white"
-            android:inputType="textPassword"
-            android:drawablePadding="10dp"
-            android:hint="@string/passwordHint"
-            android:textSize="16sp"
-            android:textColorHint="@color/white"
-            android:layout_marginTop="330dp"
-            android:gravity="end"
-            android:drawableRight="@drawable/ic_pass_icon"
-            android:layout_width="211dp"
-            android:layout_height="40dp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentTop="true"/>
-        
-        
-        <TextView
-            android:textColor="@color/white"
-            android:text="@string/forgotPassword"
-            android:textSize="12sp"
-            android:layout_marginTop="375dp"
-            android:layout_marginStart="80dp"
-            android:layout_width="wrap_content"
-            android:layout_height="15dp"
-            android:layout_alignParentTop="true"
-            />
-
-
-
-        <Button
-            android:id="@+id/id_loginButton"
-            android:soundEffectsEnabled="true"
-            android:paddingLeft="60dp"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:text="@string/sign_in_btn"
-            android:layout_marginBottom="120dp"
-            android:layout_alignParentBottom="true"
-            android:layout_width="210dp"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/ic_signin_btn" />
 
     </RelativeLayout>
-
-    <TextView
-        android:fontFamily="@font/ubuntu_l"
-        android:textSize="10sp"
-        android:layout_marginBottom="87dp"
-        android:layout_width="wrap_content"
-        android:textColor="@color/white"
-        android:layout_height="14dp"
-        android:layout_gravity="bottom|center"
-        android:text="@string/powered_by_resaa"
-        />
 
     <RelativeLayout
-
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_width="297dp"
-        android:layout_height="17dp"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="30dp">
-
-        <ImageView
-            android:layout_centerInParent="true"
-
-            android:src="@drawable/ic_twitter"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="34.6dp"
-            android:src="@drawable/ic_instagram"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="66.5dp"
-            android:src="@drawable/ic_facebook"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="90.5dp"
-            android:src="@drawable/ic_telegram"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_centerInParent="true"
-
-            android:layout_marginEnd="135dp"
-            android:layout_alignParentEnd="true"
-            android:background="@color/white"
-            android:layout_width="80dp"
-            android:layout_height="1dp"/>
-        
-        <TextView
-            android:fontFamily="@font/ubuntu_l"
-            android:textSize="13sp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:textColor="@color/white"
-            android:text="@string/join_us_on"
-            android:layout_width="wrap_content"
-            android:layout_height="17dp" />
-
-
+        android:id="@+id/id_signin_signup"
+        android:layout_marginTop="255dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     </RelativeLayout>
+
+
+
 
 </FrameLayout>

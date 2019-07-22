@@ -4,14 +4,14 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.example.amir.base.MVVM.models.Doctors;
+import com.example.amir.base.MVVM.models.OldDoctors;
 import com.example.amir.base.repositories.DoctorRepository;
 
 import java.util.List;
 
 public class MainActivityViewModel extends ViewModel {
 
-    private MutableLiveData<List<Doctors>> doctorsMutableLiveData;
+    private MutableLiveData<List<OldDoctors>> doctorsMutableLiveData;
     private DoctorRepository doctorRepository;
     private MutableLiveData<Boolean> dataIsUpdating = new MutableLiveData<>();
 
@@ -25,7 +25,7 @@ public class MainActivityViewModel extends ViewModel {
 
     }
 
-    public LiveData<List<Doctors>> getDoctors(){
+    public LiveData<List<OldDoctors>> getDoctors(){
         return doctorsMutableLiveData;
     }
 }

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signup_background"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo"
+        android:layout_width="100dp"
+        android:layout_height="54dp" />
+
+
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="471dp"
+        android:background="@drawable/signin_motive" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/id_signin_page"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:fontFamily="@font/ubuntu_l"
+            android:gravity="center"
+            android:text="@string/sign_in"
+            android:textColor="@color/fadedWhite"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.898"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.24" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.24" />
+
+
+        <TextView
+            android:id="@+id/id_signup_page"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:fontFamily="@font/ubuntu_m"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textColor="@color/yellow"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.102"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.239" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/enter_sms_code"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.40"/>
+
+
+        <com.poovam.pinedittextfield.SquarePinField
+            android:textColor="@color/smsCode"
+            android:layout_width="wrap_content"
+            app:highlightColor="@color/colorAccent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            app:fieldBgColor="@color/lightWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.010000002" />
+
+        <TextView
+            android:drawableEnd="@drawable/ic_resend"
+            android:id="@+id/textView3"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="@string/resend_code"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.61" />
+
+
+        <Button
+            android:id="@+id/id_verifysmscode_btn"
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_next_btn"
+            android:gravity="center"
+            android:soundEffectsEnabled="true"
+            android:text="@string/check_code"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.72" />
+
+
+        <TextView
+            android:id="@+id/id_code_status"
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:layout_marginBottom="87dp"
+            android:fontFamily="@font/ubuntu_l"
+            android:text="@string/wrong_code_entered"
+            android:textColor="@color/smsCodeStatus"
+            android:textSize="12sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_verifysmscode_btn"
+            app:layout_constraintVertical_bias="0.2" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+    <RelativeLayout
+
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="297dp"
+        android:layout_height="17dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="30dp">
+
+        <ImageView
+            android:layout_centerInParent="true"
+
+            android:src="@drawable/ic_twitter"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="34.6dp"
+            android:src="@drawable/ic_instagram"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="66.5dp"
+            android:src="@drawable/ic_facebook"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="90.5dp"
+            android:src="@drawable/ic_telegram"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_centerInParent="true"
+
+            android:layout_marginEnd="135dp"
+            android:layout_alignParentEnd="true"
+            android:background="@color/white"
+            android:layout_width="80dp"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:fontFamily="@font/ubuntu_l"
+            android:textSize="13sp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/white"
+            android:text="@string/join_us_on"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp" />
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>
