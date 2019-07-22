@@ -19,4 +19,7 @@
     <string name="check_code">بررسی کد</string>
     <string name="resend_code">ارسال مجدد کد شناسایی</string>
     <string name="wrong_code_entered">کد وارد شده صحیح نمی باشد</string>
+
+    <string name="resaa_persian">رسانه سلامت ایرانیان</string>
+    <string name="resaa_text">R E S A A</string>
 </resources>
